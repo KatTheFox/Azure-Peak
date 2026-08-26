@@ -172,7 +172,7 @@
 			continue
 		if(F.has_member(H))
 			continue
-		if(H.rogue_sneaking || (H.name == "Unknown"))
+		if(H.rogue_sneaking)
 			continue
 		var/display = H.get_visible_name()
 		var/label = display
