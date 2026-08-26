@@ -1,7 +1,7 @@
 
 /datum/action/cooldown/spell/raise_undead_guard
 	name = "Conjure Undead"
-	desc = "Invoke forbidden magicka to summon a mindless, shambling skeleton.\nMindless skeletons can be given orders to guard, patrol, and attack by their summoner.\nThese skeletons are weaker than their more complex-jointed counterparts, but are harder to incapacitate."
+	desc = "Invoke forbidden magicka to summon a mindless, shambling skeleton.\nThese skeletons are stronger than their simpler-jointed counterparts, but are easier to incapacitate and cannot be ordered."
 	background_icon = 'icons/mob/actions/zizomiracles.dmi'
 	button_icon = 'icons/mob/actions/zizomiracles.dmi'
 	button_icon_state = "skeleton"
