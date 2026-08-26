@@ -37,5 +37,6 @@
 
 	var/datum/advclass/C = input(H.client, "What is my class?", "HOW DO YOU SERVE YOUR MASTER?") as null|anything in possible_classes
 	C.equipme(H)
+	H.advclass_override = C.name
 
 	H.adjust_skillrank_up_to(/datum/skill/magic/blood, 3, TRUE)

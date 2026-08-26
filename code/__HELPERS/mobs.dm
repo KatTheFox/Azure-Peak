@@ -231,6 +231,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/clothes_pref = CLOTHES_M
 	var/obscured_flags = NONE
 	var/override_advclass_examine = FALSE // if you get converted to a different role like servant with advjob_examine set to true, your title won't change on examine bcs your advclass hasn't actually changed - so we override that setting
+	var/advclass_override // conversely, lyckers need to display as a different role entirely when they're residents
 
 /**
  * Timed action involving one mob user. Target is optional.

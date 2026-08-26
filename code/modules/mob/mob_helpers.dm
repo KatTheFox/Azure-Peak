@@ -1159,7 +1159,7 @@
 		if(J.f_title && (titles_pref == TITLES_F))
 			used_title = J.f_title
 		if(J.advjob_examine && !override_advclass_examine)
-			used_title = advjob
+			used_title = (advclass_override || advjob)
 	return used_title
 
 ///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
