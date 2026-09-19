@@ -2369,7 +2369,7 @@
 	)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/sewing/maiddress
+/datum/crafting_recipe/roguetown/sewing/maiddressfancy
 	name = "valorian maid dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/maidfancy)
 	reqs = list(
