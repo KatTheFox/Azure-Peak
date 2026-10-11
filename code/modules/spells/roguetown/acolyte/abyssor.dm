@@ -161,7 +161,7 @@
 		revert_cast()
 		return FALSE
 
-	to_chat(user, span_blue("<i>[user] makes a beckoning gesture at [T] as a white fog swirls momentarily!</i>"))
+	user.visible_message(span_blue("<i>[user] makes a beckoning gesture at [T] as a white fog swirls momentarily!</i>"))
 	user.say(pick("The Dreamer commands you, splash forth.","By Abyssor's will, spring forth.","Splash forth.","Come hither, abyssals.","Leap in Abyssor's name.","I call to you, denizens of the depths."), language = /datum/language/common)
 
 	var/cost = devotion_cost + (streak * (miracleskill/2))
