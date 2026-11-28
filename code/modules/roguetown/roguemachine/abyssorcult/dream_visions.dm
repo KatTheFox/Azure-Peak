@@ -175,11 +175,10 @@
 	if(last_sleep_scry_time && world.time < last_sleep_scry_time + 1 MINUTES)
 		return
 
-	sleep_scry_count++
-	last_sleep_scry_time = world.time
-
 	to_chat(seeker, span_purple("Your slumber pulls you back into the vision..."))
-	temporary_target_scry()
+	if(temporary_target_scry()) // AFK/clientless players now sleep. so we don't want to consume an attempt if they're not IN their mob (no client → no key → make_observer returns false → scry_ghost returns false → temporary_target_scry returns false)
+		sleep_scry_count++
+		last_sleep_scry_time = world.time
 
 /datum/component/vision_quest_tracker/proc/sanitize_speech_phrase(phrase)
 	var/cleaned = LOWER_TEXT(phrase)
@@ -239,7 +238,7 @@
 	eye.forceMove(target_turf)
 	eye.scry_center_turf = target_turf
 
-	to_chat(seeker, span_purple("Your mind pierces the veil to glimpse your target... You have 6 seconds."))
+	to_chat(eye, span_purple("Your mind pierces the veil to glimpse your target... You have 6 seconds."))
 	addtimer(CALLBACK(eye, TYPE_PROC_REF(/mob/dead/observer/eye/arcane, cancel_scry)), 6 SECONDS)
 	return TRUE
 
